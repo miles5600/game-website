@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const db = firebase.firestore();
   const body = document.body;
   const darkModeToggle = document.getElementById("toggle-dark-mode");
 
@@ -22,27 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Example function to load games (replace with your actual game loading logic)
   function loadGames() {
-    db.collection('flashGames').get().then(snapshot => {
-      snapshot.forEach(doc => {
-        const game = doc.data();
-        const gameItem = document.createElement('div');
-        gameItem.classList.add('game-item');
-        gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" target="_blank">Play Now</a>`;
-        document.querySelector('#flash-games .game-list').appendChild(gameItem);
-      });
-    });
+    // Example code to load games
+    const games = [
+      { title: "Game 1", url: "game1.swf" },
+      { title: "Game 2", url: "game2.swf" }
+    ];
 
-    db.collection('cdGames').get().then(snapshot => {
-      snapshot.forEach(doc => {
-        const game = doc.data();
-        const gameItem = document.createElement('div');
-        gameItem.classList.add('game-item');
-        gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" download>Download</a>`;
-        document.querySelector('#cd-games .game-list').appendChild(gameItem);
-      });
-    });
-  }
-
-  loadGames();
-});
+    const flashGamesContainer = document.querySelector('#flash-games .game-list');
+    games.forEach(game => {
+      const gameItem = document.createElement('div');
+      gameItem.classList.add('game-item');
+      gameItem.innerHTML = `<h3>${game.title}</
