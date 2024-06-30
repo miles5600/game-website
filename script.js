@@ -1,56 +1,43 @@
-// script.js
-document.addEventListener("DOMContentLoaded", function () {
-  const body = document.body;
-  const darkModeToggle = document.getElementById("toggle-dark-mode");
+// Firebase configuration
+var firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-  // Check for saved user preference in localStorage
-  const savedMode = localStorage.getItem("dark-mode");
-  if (savedMode) {
-    body.classList.add(savedMode);
-  } else {
-    body.classList.add("light-mode"); // Default to light mode
-  }
+document.getElementById('dark-mode-toggle').addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
 
-  // Function to toggle dark mode
-  darkModeToggle.addEventListener("click", () => {
-    if (body.classList.contains("dark-mode")) {
-      body.classList.replace("dark-mode", "light-mode");
-      localStorage.setItem("dark-mode", "light-mode");
-    } else {
-      body.classList.replace("light-mode", "dark-mode");
-      localStorage.setItem("dark-mode", "dark-mode");
-    }
-  });
+const flashGamesContainer = document.querySelector('#flash-games .game-list');
+const cdGamesContainer = document.querySelector('#cd-games .game-list');
 
-  // Example function to load games (replace with your actual game loading logic)
-  function loadGames() {
-    // Example code to load games
-    const flashGames = [
-      { title: "Game 1", url: "game1.swf" },
-      { title: "Game 2", url: "game2.swf" }
-    ];
-
-    const flashGamesContainer = document.getElementById('flash-games');
-    flashGames.forEach(game => {
+function loadGames() {
+  db.collection('flashGames').get().then(snapshot => {
+    snapshot.forEach(doc => {
+      const game = doc.data();
       const gameItem = document.createElement('div');
       gameItem.classList.add('game-item');
       gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" target="_blank">Play Now</a>`;
       flashGamesContainer.appendChild(gameItem);
     });
+  });
 
-    const cdGames = [
-      { title: "CD Game 1", url: "cdgame1.zip" },
-      { title: "CD Game 2", url: "cdgame2.zip" }
-    ];
-
-    const cdGamesContainer = document.getElementById('cd-games');
-    cdGames.forEach(game => {
+  db.collection('cdGames').get().then(snapshot => {
+    snapshot.forEach(doc => {
+      const game = doc.data();
       const gameItem = document.createElement('div');
       gameItem.classList.add('game-item');
       gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" download>Download</a>`;
       cdGamesContainer.appendChild(gameItem);
     });
-  }
+  });
+}
 
-  loadGames();
-});
+loadGames();
