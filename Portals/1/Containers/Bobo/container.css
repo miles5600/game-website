@@ -1,0 +1,192 @@
+/* 
+================================
+ Container Styles for DotNetNuke
+================================
+*/   
+.containermasterstandaard {
+	width: 100%;
+	background-color: transparent;
+	border-right: #FFFFFF 0px solid; 
+	border-top: #FFFFFF 0px solid; 
+	border-left: #FFFFFF 0px solid; 
+	border-bottom: #FFFFFF 0px solid; 
+	moz-border-radius-bottomleft: 15px; 
+	moz-border-radius-bottomright: 15px; 
+	moz-border-radius-topleft: 3px; 
+	moz-border-radius-topright: 3px;
+	margin-bottom: 8px;
+}
+.containermaster {
+	width: 100%;
+	background-color: #88cdf4;
+	border-right: #FFFFFF 0px solid; 
+	border-top: #FFFFFF 0px solid; 
+	border-left: #FFFFFF 0px solid; 
+	border-bottom: #FFFFFF 0px solid; 
+	moz-border-radius-bottomleft: 15px; 
+	moz-border-radius-bottomright: 15px; 
+	moz-border-radius-topleft: 3px; 
+	moz-border-radius-topright: 3px;
+	margin-bottom: 8px;
+}
+.containermaster_blue {
+	width: 100%;
+	background-color: #88cdf4;
+	border-right: #FFFFFF 0px solid; 
+	border-top: #FFFFFF 0px solid; 
+	border-left: #FFFFFF 0px solid; 
+	border-bottom: #FFFFFF 0px solid; 
+	moz-border-radius-bottomleft: 15px; 
+	moz-border-radius-bottomright: 15px; 
+	moz-border-radius-topleft: 3px; 
+	moz-border-radius-topright: 3px;
+	margin-bottom: 8px;
+}
+.containermaster_blue td {
+	padding: 5px;
+}
+.containerheaderstandaard {
+	background-color: transparent;
+	height: 25px;
+}
+.containerheader_lichtblauw {
+	background-color: #00adf0;
+	background-image: url(images/containerheader_lichtblauw.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 35px;
+	border: 5px solid #88cdf5;
+}
+.containerheader_donkerblauw {
+	background-color: #0e8fd2;
+	background-image: url(images/containerheader_donkerblauw.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 35px;
+	border: 5px solid #88cdf5;
+}
+.containerheader_rood {
+	background-color: #eb1a23;
+	background-image: url(images/containerheader_rood.gif);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	height: 35px;
+	border: 5px solid #88cdf5;
+}
+
+.ContainerTitle {
+	width: 100%;
+	padding-left: 0px;
+   color: #ffffff;
+	font-family: Arial, Verdana, Trebuchet MS;
+	font-weight: bold;
+	font-size: 13px;
+	padding-left: 5px;
+}
+.ContainerTitleStandaard {
+	width: 100%;
+   color: #0077bb;
+	font-family: Arial, Verdana, Trebuchet MS;
+	font-weight: bold;
+	font-size: 14px;
+}
+.ContainerTitleRed {
+	width: 100%;
+  color: #ea3625;
+	font-family: Arial, Verdana, Trebuchet MS;
+	font-weight: bold;
+	font-size: 16px;
+}
+.ContainerTitlePadding {
+	width: 100%;
+   color: #0077bb;
+	font-family: Arial, Verdana, Trebuchet MS;
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 10px;
+}
+.ContainerTitleBlack {
+	width: 100%;
+   color: #000000;
+	font-family: Arial, Verdana, Trebuchet MS;
+	font-weight: bold;
+	font-size: 14px;
+}
+.containercontentstandaard {
+	width: 100%;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+.containercontentpadding {
+	width: 100%;
+	padding-left: 10px;
+	padding-right: 20px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+.containercontent {
+	background-color: transparent;
+	width: 100%;
+	border-top : solid 0px #009DD9;     
+ 	border-bottom : solid 0px #009DD9;     
+  	border-right : solid 0px #009DD9;
+  	border-left  : solid 0px #009DD9;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 5px;
+}
+.containercontent_notitle {
+	background-color: transparent;
+	width: 100%;
+	border-top : solid 0px #009DD9;     
+ 	border-bottom : solid 0px #009DD9;     
+  	border-right : solid 0px #009DD9;
+  	border-left  : solid 0px #009DD9;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.containterheader {
+	background-color: #ffdb00;
+}
+.TitleFlash {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: bold;
+	color: #d40000;
+	text-decoration: none;
+}
+.Lightbox_container {
+	background-color: transparent;
+	width: 622px;
+	vertical-align: top;
+}
+.lightbox_top {
+	background-color: transparent;
+	background-image: url(../../Skins/bobo/images/FlashContainer/top.png);
+	background-repeat: no-repeat;
+	width: 622px;
+	height: 47px;
+}
+.lightbox_content {
+	background-color: transparent;
+	background-image: url(../../Skins/bobo/images/FlashContainer/content.png);
+	background-repeat: repeat-y;
+	/*width: 622px;*/
+	width: 562px;
+	height: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.lightbox_bottom {
+	background-color: transparent;
+	background-image: url(../../Skins/bobo/images/FlashContainer/bottom.png);
+	background-repeat: no-repeat;
+	width: 622px;
+	height: 68px;
+}

@@ -1,0 +1,902 @@
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+html {
+	background-color: #b5cf61;
+}
+body {
+   behavior: url("http://boom.bobo.nl/Portals/1/Skins/Bobo/csshover3.htc");
+}
+#All {
+	background-color: #b5cf61;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+.pagemaster {
+	background-color: #b5cf61;
+	background-image: url(images/back_1px.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	width: 100%;
+	
+}
+.skin_left {
+	background-image: url(images/tjerk.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 79px;
+	height: 595px;
+}
+.skin_right {
+	background-image: url(images/krabbel.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 123px;
+	height: 595px;
+}
+.skinmaster {
+	background-color: transparent;	
+	width: 1250px;
+	background-image: url(images/bggreen.jpg);
+	background-position: top center;
+	background-repeat: no-repeat;
+	width: 100%;
+}
+.skintotal {
+	/*background-color: #ffffff;*/
+	background-color: transparent;
+	background-color: #ffffff;
+	width: 982px;	
+	/*padding: 10px;*/
+	margin-top: 15px;
+	border-left: 10px solid #ffffff;
+	border-right: 10px solid #ffffff;
+	border-top: 2px solid #ffffff;
+	border-bottom: 5px solid #ffffff;
+}
+.BannerLogo {
+	height: 115px;
+}
+.skinheader {
+	background-color: #ffffff;
+	height: 184px;
+	height: 109px;
+	vertical-align: top;
+}
+.BannerRow {
+	height: 95px;
+}
+.tekstspeelboom {
+	background-image: url(images/speelboom.jpg);
+	background-repeat: no-repeat;
+	width: 219px;
+	height: 29px;
+}
+.tekstbekijken {
+	background-image: url(images/bekijken.jpg);
+	background-repeat: no-repeat;
+	width: 232px;
+	height: 21px;
+}
+/*.skincontent {
+	background-color: transparent;
+	width: 782px;
+	border: 1px solid blue;
+}*/
+.LeftPane {
+	background-color: #89cdf4;
+	width: 210px;
+}
+.ContentPane {
+	background-color: transparent;
+	/*border-right: 5px solid white;*/
+}
+.ContentPaneHome {
+	background-image: url(images/home01.gif);
+	background-repeat: no-repeat;
+	background-position: top;
+	/*
+	width: 777px;
+	height: 433px;*/
+}
+.ContentPaneBlue {
+	background-color: #89cdf4;
+	padding: 5px;
+}
+.FormPane {
+	background-color: #0077bb;
+	padding: 5px;
+}
+.FormPane .NormalBold {
+	color: #fff;
+	font-size: 14px;
+	margin-right: 25px;
+}
+.FormPane #SaveForm input {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 125px;
+}
+
+.ContentPaneBlueLeft {
+	background-color: #89cdf4;
+	width: 561px;
+	/*	width: 100%;*/
+}
+.RightPane {
+	background-color: #ffffff;
+	width: 205px;
+	border-left: 5px solid white;
+}
+.login, a.login:link, a.login:visited, a.login:hover, a.login:active {
+	font-family: Verdana, Arial;
+	font-weight: bold;
+	color: #b5cf61;
+}
+
+
+A:Link, A:Visited, A:Active {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: red;
+}
+A:Hover {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	color: red;
+}
+.bottommenu a:link,
+.bottommenu a:visited,
+.bottommenu a:active {
+	font-family: Verdana, Arial, Verdana;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #008edd;
+}
+.Normal {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12px;
+	color: #000000;
+	text-align: left;
+}
+.NormalBlue {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12px;
+	color: #0087cd;
+}
+.NormalBlack {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: normal;
+	text-decoration: none;
+	line-height: 12px;
+	color: #000000; 
+}
+.NormalBold {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #000000; 
+}
+.Head {
+	font-family: Verdana, Arial;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #0077bb;
+}
+.SubHead {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #0077bb;
+	color: #000000;
+}
+a.CommandButton:link, a.CommandButton:visited, a.CommandButton:active {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #0077bb; 
+}
+a.CommandButton:hover {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #0077bb; 
+}
+label {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #0077bb;
+}
+.Ads {
+	font-family: Verdana, Arial;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #008edd; 
+}
+img {
+	border: none;
+}
+
+/*.NormalTextBox {
+	background-color: #ffffff;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}*/
+.OproepTabel {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: normal;
+	text-decoration: none;
+	color: #000000; 
+}
+.OproepTabel img {
+	border: 1px solid #ffffff;
+}
+.OproepRow {
+	background-color: #88cdf4;
+}
+.OproepSpacer {
+	height: 5px;
+}
+.OproepMailNaar {
+	font-size: 11px;
+	font-weight: normal;
+	color: #ed1c24;
+}
+.OproepMailNaar a:link,
+.OproepMailNaar a:visited,
+.OproepMailNaar a:hover {
+	font-weight: bold;
+	color: #000000;
+	text-decoration: underline;
+}
+
+/*  Styles voor prijsvragen  */
+.DynamicForms_Maintable {
+}
+.DynamicForms_Maintable.NormalTextBox {
+	background-color: #ffffff;
+	border: 0px; 
+	display: inline;
+	float: left;
+}
+.NormalTextBox {
+	/*background-color: #fbfbfb;*/
+	background-color: #f5f5f5;
+	border: 1px solid #e7e7e7;
+}
+.PagingTable {
+	border: none;
+}
+ul li {
+	list-style: circle;
+	margin-left: 22px;
+	line-height: 20px;
+}
+
+/*  Upload Formulier Repository  */
+
+.RepositorySpacer {
+	background-color: transparent;
+	font-family: Arial, Verdana;
+	font-weight: normal;
+	font-size: 12px;
+	color: aqua;
+	text-decoration: none;
+	height: 15px;
+	margin: 0px;
+	padding: 0px;
+}
+a.UploadButton:hover {
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #0077bb; 
+	background-color: black;
+}
+#dnn_ctr395_Form___AuthorName {    /*  Name Field  */
+	border: 1px solid #696969;
+	margin-bottom: 15px;
+	color: #0077bb;
+	margin-left: 7px;
+}
+#dnn_ctr395_Form___Image {    /*  Image Upload Tekening Field  */
+	border: 1px solid #696969;
+	margin-bottom: 15px;
+	color: #0077bb;
+	margin-left: 7px;
+}
+#dnn_ctr395_Form___Title {    /*  Title is Leeftijd Field  */
+	border: 1px solid #696969;
+	margin-bottom: 15px;
+	color: #0077bb;
+	margin-left: 7px;
+	
+}
+#dnn_ctr395_Form___AuthorEMail {    /*  E-mail Field  */
+	border: 1px solid #696969;
+	margin-bottom: 15px;
+	color: #0077bb;
+	margin-left: 7px;
+}
+#dnn_ctr395_Form___ShowEMail {   /*  E-mailadres wel of niet tonen */
+	display: none;
+}
+#dnn_ctr395_Form___TEDescription_tblTextEditor {  /* Op de tekening */
+	color: #0077bb;
+	margin-left: 7px;
+}
+#dnn_ctr395_Form___TEDescription_pnlOption {  /* Basic of Rich editor options */
+	display: none;
+}
+
+
+
+/*  Beheer Vriendenboekje  */ 
+
+#dnn_ctr442_ViewFriends_txtName {   /*  Textbox name */
+	border: 1px solid #f2f2f2;
+}
+#dnn_ctr442_ViewFriends_cboApproved {  /*  Dropdownbox approved  */
+	border: 1px solid #f2f2f2;
+}
+#dnn_ctr442_ViewFriends_txtInsertedAfter {   /*  Textbox inserted after */
+	border: 1px solid #f2f2f2;
+}
+#dnn_ctr442_ViewFriends_cmdCalendar {    /*  Kalenderknop  */
+	/*background-color: #a2d2ee;*/
+	background-color: #8cb9d4;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	padding-left: 8px;
+	padding-right: 8px;	
+	text-decoration: none;
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+} 
+.CommandButtonFriends {   /*  Zoekknop  */
+	/*background-color: #a2d2ee;*/
+	background-color: #8cb9d4;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 12px;
+	padding-right: 12px;	
+	text-decoration: none;
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+#dnn_ctr442_ViewFriends_GridViewFriends {
+	margin-left: 88px;
+	margin-top: 15px;
+}
+#dnn_ctr442_ViewFriends_GridViewFriends_DXMainTable {   /*  Maintable  */
+	background-color: transparent;
+	border: none;
+}
+
+#dnn_ctr442_ViewFriends_GridViewFriends_DXHeadersRow {  /*  Row Gridview Friends  */
+	background-color: transparent;
+}
+#dnn_ctr442_ViewFriends_GridViewFriends_DXTDcol0 {    /*  Header Edit  */
+	background-color: #a2d2ee;
+}
+#dnn_ctr442_ViewFriends_GridViewFriends_DXTDGScol1 {
+	background-color: #a2d2ee;
+}
+#dnn_ctr442_ViewFriends_GridViewFriends_DXTDGScol2 {
+	background-color: #a2d2ee;
+}
+#dnn_ctr442_ViewFriends_GridViewFriends_DXTDGScol3 {
+	background-color: #a2d2ee;
+}
+#dxgv {   /*  no data */
+	
+}
+#dnn_ctr442_ViewFriends_cmdNew {   /*  Knop new  */
+	background-color: #8cb9d4;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 18px;
+	padding-right: 18px;	
+	text-decoration: none;
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+
+/* Prijsvragen */
+.prijsvraag_wrapper {
+	height: 335px;
+	min-height: 335px;
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 0px;
+	margin-top: 2px;
+	float: left;
+}
+.prijsvraag_container {
+	width: 100%;
+	width: 255px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.tl {
+	background: url(images/prijsvragen/topleft.gif) no-repeat;
+	width: 18px;
+	height: 18px;
+	display: block;
+	border: none;padding: 0px;margin: 0px;
+}
+.top {
+	height: 18px;
+	background: url(images/prijsvragen/top.gif) repeat-x top;
+}
+.tr {
+	background: url(images/prijsvragen/topright.gif) no-repeat top right;
+	width: 18px;
+	height: 18px;
+	display: block;
+	border: none;padding: 0px;margin: 0px;
+}
+.left {
+	background: url(images/prijsvragen/left.gif) repeat-y left;
+	width: 18px;
+}
+.content {
+	background-color: #91d9f8;
+	text-align: left;
+	font-family: Verdana;
+	text-decoration: none;
+}
+.right {
+	background: url(images/prijsvragen/right.gif) repeat-y right;
+	width: 18px;
+	height: 100%;
+}
+.bl {
+	background: url(images/prijsvragen/bottomleft.gif) no-repeat bottom left;
+	width: 18px;
+	height: 18px;
+}
+.bottom {
+	background: url(images/prijsvragen/bottom.gif) repeat-x bottom;	
+	height: 18px;
+}
+.br {
+	background: url(images/prijsvragen/bottomright.gif) no-repeat bottom right;
+	width: 18px;
+	height: 18px;		
+}
+.title {
+	font-family: Verdana;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ff2200;
+	line-height: 17px;
+	margin-top: 7px;
+	margin-bottom: 7px;
+	height: 18px;
+	overflow: hidden;
+}
+.description {
+	font-family: Verdana;
+	font-size: 11px;
+	font-weight: normal;
+	color: #010101;	
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+.date {
+	font-family: Verdana;
+	font-size: 13px;
+	font-weight: normal;
+	font-style: italic;
+	color: #ff2200;
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+.imageframe {
+/*	width: 149px;
+	height: 149px;*/
+width: 210px;
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.imageframe img {
+	width: 215px;
+	max-height: 155px;
+	border: 1px solid #fff;
+	overflow: hidden;
+	z-index: -1 !important;
+}
+.btn {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 32px;
+}
+
+
+/* Einde Prijsvragen */
+
+
+
+
+
+
+
+
+/*  Menu  */
+
+.MenuSpacer {
+	height: 7px;
+}
+.SubMenuPane {
+	background-color: transparent;
+	width: 777px;
+	margin-right: 3px;
+}
+.MainMenu_MenuContainer {
+	height: 40px;
+	vertical-align: top;
+	padding: 0px;
+	margin: 0px;
+	width: 777px;
+}
+.MainMenu_MenuBar {
+	height: 40px;
+}
+.MainMenu_MenuItem {
+	background-image: url(images/menu_item.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 127px;
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+	display: inline;
+	float: left;
+	border: 0px;
+	clear: both;
+}
+
+.MainMenu_MenuItem td {
+	width: 127px;
+	height: 16px;
+	max-height: 16px;
+	display: block;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.MainMenu_MenuItemSel {
+	background-image: url(images/menu_itemactive.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 127px;
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+	display: inline;
+	float: left;
+	border: 0px;
+	clear: both;
+}
+
+.MainMenu_MenuItemSel td {
+	width: 127px;
+	height: 16px;
+	max-height: 16px;
+	display: block;
+	border: 0px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.MainMenu_MenuItemActive {
+	background-image: url(images/menu_itemactive.gif);
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 127px;
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	font-weight: bold;
+	color: #ffffff;
+	text-align: center;
+	display: inline;
+	float: left;
+	clear: both;
+	border: 0px;
+}
+
+.MainMenu_MenuItemActive td {
+	width: 127px;
+	height: 16px;
+	max-height: 16px;
+	display: block;
+	border: 0px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.MainMenu_SubMenu {
+	background-color: #ffffff;
+	z-index: 1000; 
+	cursor: pointer; 
+	cursor: hand; 
+}
+.MainMenu_MenuIcon,
+.MainMenu_MenuIcon td {
+	display: none;	
+}
+.MainMenu_Separator {
+	background: transparent;
+}
+.MainMenu_MenuBreak {
+	padding-left: 0px;
+  padding-right: 0px;
+  border-top: solid 0px;
+  border-bottom: solid 0px;
+  border-right: solid 0px;
+  width: 13px;
+}
+.MainMenu_MenuArrow,
+.MainMenu_MenuArrow td {
+	display: none;
+}
+
+.MainMenu_SubMenu .MainMenu_MenuItem {
+	background-image: none;
+	background: none;
+	color: red;
+	text-align: left;
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.MainMenu_SubMenu .MainMenu_MenuItem td {
+	padding: 0px;
+	margin: 0px;
+}
+.MainMenu_SubMenu .MainMenu_MenuItemSel {
+	background: none;
+	color: red;
+	text-align: left;
+	font-family: Arial, Verdana;
+	font-size: 12px;
+	font-weight: normal;
+}
+.MainMenu_SubMenu .MainMenu_MenuItemSel td {
+	padding: 0px;
+	margin: 0px;
+}
+
+
+.MainMenu_SubMenu .MainMenu_MenuIcon,
+.MainMenu_SubMenu .MainMenu_MenuIcon td {
+	display: none;
+}
+.MainMenu_SubMenu .MainMenu_MenuBreak,
+.MainMenu_SubMenu .MainMenu_MenuBreak td {
+	width: 1px;
+}
+.MainMenu_SubMenu .MainMenu_MenuArrow,
+.MainMenu_SubMenu .MainMenu_MenuArrow td {
+	display: none;
+}
+
+
+
+
+.DynamicForms_Maintable {
+	width: 200px;
+	text-align: left;
+}
+
+
+
+/* Styles voor dropdown in topmenu */
+
+#menu ul li.item {
+	display: none;
+}
+#menu ul li.top {
+	list-style: none;
+	background-image: url(images/dropdownheader/combobox.gif);
+	background-repeat: no-repeat;
+	width: 131px;
+	height: 23px;
+	display: block;
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	padding-top: 3px;
+	/*padding-left: 20px;*/
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	margin: 0px;
+}
+#menu ul li.top:hover {
+	color: #000000;
+	cursor: hand;cursor:pointer;
+	list-style-type: none;
+}
+#menu ul:hover {
+	background-image: url(images/dropdownheader/dropdown.gif);
+	background-repeat: no-repeat;
+	width: 128px;
+	height: 158px;
+	cursor: hand;cursor:pointer;
+	list-style-type: none;
+}
+
+
+
+#menu ul:hover .item {
+	display: block;
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 18px;
+	padding-left: 2px;
+	padding-right: 20px;
+	cursor: hand;cursor:pointer;
+	list-style-type: none;
+}
+#menu ul:hover .item a:link, 
+#menu ul:hover .item a:visited {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+	display: block;
+	cursor: hand;cursor:pointer;
+	list-style-type: none;
+}
+#menu ul:hover .item a:hover {
+	font-weight: bold;
+	color: #333333;
+	display: block;
+	cursor: hand;cursor:pointer;
+	list-style-type: none;
+}
+#menu {
+	position: relative;
+	color: #000000;
+	width: 230px;
+	height: 30px;
+	padding-top: 6px;
+}
+#moresites {
+	margin: 0px;
+	padding: 0px;
+}
+/* FOR IE 6 */
+#moresites a {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #ffffff;
+}
+#moresites a:hover {
+	font-family: Verdana, Arial;
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #0077bb;
+}
+/* END IE6 */
+
+.MenuPane {
+	background-image: url(images/dropdownred/redline.gif);
+	background-repeat: repeat-x;
+	width: 100%;
+	height: 32px;
+}
+.h_spacer50 {
+	width: 50px;
+	display: inline-block;
+}
+.oudersbutton a:link, .oudersbutton a:visited {
+	background-image: url(images/dropdownheader/ouders_normal.gif);
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.oudersbutton a:hover {
+	background-image: url(images/dropdownheader/ouders_over.gif);
+	background-repeat: no-repeat;
+	width: 100px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.leerkrachtenbutton a:link, .leerkrachtenbutton a:visited {
+	background-image: url(images/dropdownheader/leerkrachten_normal.gif);
+	background-repeat: no-repeat;
+	width: 139px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.leerkrachtenbutton a:hover {
+	background-image: url(images/dropdownheader/leerkrachten_over.gif);
+	background-repeat: no-repeat;
+	width: 139px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.contactbutton a:link, .contactbutton a:visited {
+	background-image: url(images/dropdownheader/contact_normal.gif);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.contactbutton a:hover {
+	background-image: url(images/dropdownheader/contact_over.gif);
+	background-repeat: no-repeat;
+	width: 70px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.abonneebutton a:link, .abonneebutton a:visited {
+	background-image: url(images/dropdownheader/abonnee_normal.gif);
+	background-repeat: no-repeat;
+	width: 118px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
+.abonneebutton a:hover {
+	background-image: url(images/dropdownheader/abonnee_over.gif);
+	background-repeat: no-repeat;
+	width: 118px;
+	height: 23px;
+	display: block;text-decoration: none;
+	margin-right: 15px;
+}
