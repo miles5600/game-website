@@ -1,3 +1,4 @@
+// script.js
 document.addEventListener("DOMContentLoaded", function () {
   const body = document.body;
   const darkModeToggle = document.getElementById("toggle-dark-mode");
@@ -24,13 +25,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // Example function to load games (replace with your actual game loading logic)
   function loadGames() {
     // Example code to load games
-    const games = [
+    const flashGames = [
       { title: "Game 1", url: "game1.swf" },
       { title: "Game 2", url: "game2.swf" }
     ];
 
-    const flashGamesContainer = document.querySelector('#flash-games .game-list');
-    games.forEach(game => {
+    const flashGamesContainer = document.getElementById('flash-games');
+    flashGames.forEach(game => {
       const gameItem = document.createElement('div');
       gameItem.classList.add('game-item');
-      gameItem.innerHTML = `<h3>${game.title}</
+      gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" target="_blank">Play Now</a>`;
+      flashGamesContainer.appendChild(gameItem);
+    });
+
+    const cdGames = [
+      { title: "CD Game 1", url: "cdgame1.zip" },
+      { title: "CD Game 2", url: "cdgame2.zip" }
+    ];
+
+    const cdGamesContainer = document.getElementById('cd-games');
+    cdGames.forEach(game => {
+      const gameItem = document.createElement('div');
+      gameItem.classList.add('game-item');
+      gameItem.innerHTML = `<h3>${game.title}</h3><a href="${game.url}" download>Download</a>`;
+      cdGamesContainer.appendChild(gameItem);
+    });
+  }
+
+  loadGames();
+});
