@@ -106,3 +106,75 @@ app.delete('/api/admin/files/:filename', (req, res) => {
         res.status(200).json({ message: 'File deleted successfully' });
     });
 });
+// Serve file directory for admin dashboard (with file types)
+app.get('/api/admin/files', (req, res) => {
+    const uploadsDir = path.join(__dirname, 'uploads');
+    fs.readdir(uploadsDir, (err, files) => {
+        if (err) {
+            console.error('Error reading uploads directory:', err);
+            return res.status(500).json({ message: 'Error reading directory' });
+        }
+
+        // Separate files by type: ISO files and Images
+        const isoFiles = [];
+        const imageFiles = [];
+        const allowedImageTypes = ['.png', '.jpg', '.jpeg', '.gif']; // Add any other image types as needed
+
+        files.forEach(file => {
+            const ext = path.extname(file);
+            if (ext === '.iso') {
+                isoFiles.push({
+                    name: file,
+                    path: `/uploads/${file}`,
+                    type: 'application/x-iso9660-image',
+                    uploadedAt: fs.statSync(path.join(uploadsDir, file)).mtime
+                });
+            } else if (allowedImageTypes.includes(ext)) {
+                imageFiles.push({
+                    name: file,
+                    path: `/uploads/${file}`,
+                    type: 'image/' + ext.replace('.', ''),
+                    uploadedAt: fs.statSync(path.join(uploadsDir, file)).mtime
+                });
+            }
+        });
+
+        res.json({ isoFiles, imageFiles });
+    });
+});
+// Serve file directory for admin dashboard (with file types)
+app.get('/api/admin/files', (req, res) => {
+    const uploadsDir = path.join(__dirname, 'uploads');
+    fs.readdir(uploadsDir, (err, files) => {
+        if (err) {
+            console.error('Error reading uploads directory:', err);
+            return res.status(500).json({ message: 'Error reading directory' });
+        }
+
+        const isoFiles = [];
+        const imageFiles = [];
+        const allowedImageTypes = ['.png', '.jpg', '.jpeg', '.gif'];
+
+        files.forEach(file => {
+            const ext = path.extname(file).toLowerCase(); // Ensure consistent lowercase extensions
+            if (ext === '.iso') {
+                isoFiles.push({
+                    name: file,
+                    path: `/uploads/${file}`,
+                    type: 'application/x-iso9660-image',
+                    uploadedAt: fs.statSync(path.join(uploadsDir, file)).mtime
+                });
+            } else if (allowedImageTypes.includes(ext)) {
+                imageFiles.push({
+                    name: file,
+                    path: `/uploads/${file}`,
+                    type: 'image/' + ext.replace('.', ''),
+                    uploadedAt: fs.statSync(path.join(uploadsDir, file)).mtime
+                });
+            }
+        });
+
+        // Ensure both isoFiles and imageFiles are returned, even if they are empty
+        res.json({ isoFiles, imageFiles });
+    });
+});
