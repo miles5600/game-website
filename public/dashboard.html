@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Logout</a>
+            <div id="dark-mode-toggle" class="theme-toggle">
+                <i class="icon-moon"></i> <!-- Initially show the moon icon -->
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section class="upload">
+            <h2>Upload a New Game</h2>
+            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" id="game-file" name="gameFile" required>
+                <button type="submit">Upload</button>
+            </form>
+            <div id="upload-status"></div>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar">0%</div>
+            </div>
+        </section>
+    </main>
+
+    <script src="dark-mode-toggle.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,512 @@
+:root {
+    --background-light: #f5f5f5;
+    --text-light: #333;
+    --background-dark: #181818;
+    --text-dark: #f5f5f5;
+    --transition-duration: 0.4s; /* Duration of transitions */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Smooth transition */
+}
+
+.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Header */
+header {
+    background: #111;
+    padding: 10px;
+    transition: background-color var(--transition-duration);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    transition: color var(--transition-duration);
+}
+
+nav a:hover {
+    color: #90e0ef; /* Hover color */
+}
+
+#dark-mode-toggle {
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: color var(--transition-duration);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(45deg, #0077b6, #90e0ef);
+    animation: slideUpFadeIn 1s ease forwards; /* Slide up on load */
+}
+
+h1, h2 {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+p {
+    opacity: 0;
+    animation: fadeIn 1.2s forwards;
+}
+
+/* Login and Upload Sections */
+.login, .upload {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(50px); /* Start slightly lower */
+    animation: slideUpFadeIn 1s ease forwards;
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+.dark-mode .login, .dark-mode .upload {
+    background-color: #333;
+}
+
+/* Form Fields */
+input[type="text"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color var(--transition-duration), background-color var(--transition-duration);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {
+    border-color: #0077b6;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #005f8a;
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    transition: background-color var(--transition-duration);
+}
+
+.dark-mode footer {
+    background-color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px); /* Slide up from 50px */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Settle in position */
+    }
+}
+
+/* Page Transition */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Dark mode transitions */
+header, footer, .login, .upload {
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+
+/* Form Fields */
+input[type="text"], input[type="password"], input[type="file"] {
+    width: 100%;
+    padding: 15px;  /* Adjusted padding for better size */
+    margin: 15px 0;  /* More space between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Larger font for better readability */
+    transition: border-color var(--transition-duration), background-color var(--transition-duration);
+}
+
+/* Dark Mode Styling for Input Fields */
+.dark-mode input[type="text"], 
+.dark-mode input[type="password"], 
+.dark-mode input[type="file"] {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="file"]:focus {
+    border-color: #0077b6;
+}
+
+/* Dark Mode Focus Styling */
+.dark-mode input[type="text"]:focus, 
+.dark-mode input[type="password"]:focus, 
+.dark-mode input[type="file"]:focus {
+    border-color: #90e0ef;
+}
+
+/* Progress Bar Styles */
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-top: 20px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    line-height: 25px; /* Center text vertically */
+    transition: width 0.2s ease;
+}
+
+/* Success animation for the progress bar */
+.upload-complete {
+    animation: success-glow 1s ease-in-out forwards;
+}
+
+/* Keyframes for the glowing success animation */
+@keyframes success-glow {
+    0% {
+        box-shadow: 0 0 10px #0077b6;
+    }
+    50% {
+        box-shadow: 0 0 20px #00ff00; /* Green glow for success */
+    }
+    100% {
+        box-shadow: 0 0 10px #0077b6;
+    }
+}
+.file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.file-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; /* Ensure container adjusts to image */
+}
+
+.file-item:hover {
+    transform: scale(1.05);
+}
+
+.file-image {
+    max-width: 100%; /* Ensure the image fits within the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Resize and crop the image if needed */
+}
+
+.file-info {
+    margin-top: 10px;
+}
+
+.file-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* ISO File Container */
+.file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ISO File Box Styling */
+.file-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #f8f9fa;
+    max-width: 100%;
+}
+
+.file-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    background-color: #f1f1f1; /* Lighter background on hover */
+}
+
+/* ISO File Image */
+.file-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Modern Download Button */
+.file-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0077b6;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-info a:hover {
+    background-color: #00b4d8;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* ISO File Info */
+.file-info {
+    margin-top: 10px;
+}
+
+.file-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Dark Mode Toggle Button */
+#dark-mode-toggle {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0077b6;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #00b4d8;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ISO File Container */
+.file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* ISO File Box Styling */
+.file-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    background-color: #f8f9fa;
+    max-width: 100%;
+}
+
+.file-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    background-color: #f1f1f1; /* Lighter background on hover */
+}
+
+/* ISO File Image */
+.file-image {
+    max-width: 300px;  /* Set the max width to ensure the image isn't too big */
+    max-height: 200px; /* Set the max height */
+    width: auto;  /* Maintain aspect ratio */
+    height: auto;
+    object-fit: cover; /* Ensure the image is cropped nicely if it's larger than the container */
+}
+
+
+/* Modern Download Button */
+.file-info a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0077b6;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-info a:hover {
+    background-color: #00b4d8;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* ISO File Info */
+.file-info {
+    margin-top: 10px;
+}
+
+/* Ensure text is visible over image */
+.file-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333; /* Dark text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for better readability */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Position the dark mode toggle icon in the top right corner */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0077b6; /* Initial background color */
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #00b4d8;
+    transform: scale(1.1); /* Slight enlargement on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle .icon-moon,
+.theme-toggle .icon-sun {
+    font-size: 20px;
+    color: white;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Moon icon visible in light mode */
+.icon-moon {
+    opacity: 1;
+}
+
+/* Sun icon visible in dark mode */
+.icon-sun {
+    opacity: 0;
+}
+
+/* Dark mode active: Show the sun icon and hide the moon icon */
+.dark-mode .icon-moon {
+    opacity: 0;
+    transform: rotate(360deg);
+}
+
+.dark-mode .icon-sun {
+    opacity: 1;
+    transform: rotate(-360deg);
+    color: yellow;
+}
+/* Dark Mode Toggle Icon */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;  /* Smaller width */
+    height: 40px; /* Smaller height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0077b6; /* Less vibrant background color */
+    border-radius: 50%; /* Round button */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: #00b4d8; /* Lighter blue on hover */
+    transform: scale(1.1); /* Slight hover scale */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle .fas {
+    font-size: 20px; /* Ensure the icon isn't too big */
+    color: white;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .fa-moon {
+    opacity: 0;
+    transform: rotate(360deg);
+}
+
+body.dark-mode .fa-sun {
+    opacity: 1;
+    transform: rotate(-360deg);
+    color: yellow;
+}
+
+.fa-sun {
+    opacity: 0;
+}

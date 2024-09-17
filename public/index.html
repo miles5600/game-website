@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Uploaded Files</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Admin Login</a>
+            <div id="dark-mode-toggle" class="theme-toggle">
+                <i class="icon-moon"></i> <!-- Initially show the moon icon -->
+            </div>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section class="file-list">
+            <h2>Uploaded Files</h2>
+            <div id="file-container" class="file-container"></div>
+        </section>
+    </main>
+
+    <script src="dark-mode-toggle.js"></script>
+    <script>
+        // Fetch the uploaded files and display them
+        fetch('/api/files')
+            .then(response => response.json())
+            .then(files => {
+                const fileContainer = document.getElementById('file-container');
+                files.forEach(file => {
+                    const fileElement = document.createElement('div');
+                    fileElement.classList.add('file-item');
+    
+                    // Check if the file is an ISO by its extension and show the ISO placeholder image
+                    const fileImage = file.name.toLowerCase().endsWith('.iso') 
+                        ? '/images/ambrasoft 1212 iso image.png'  // Use placeholder for ISO files
+                        : '/path/to/other-image.jpg';  // You can use a different placeholder for other file types
+    
+                    fileElement.innerHTML = `
+                        <img src="${fileImage}" alt="File Image" class="file-image">
+                        <div class="file-info">
+                            <h3>${file.name}</h3>
+                            <a href="${file.path}" download>Download</a>
+                        </div>
+                    `;
+    
+                    fileContainer.appendChild(fileElement);
+                });
+            });
+    </script>
+    
