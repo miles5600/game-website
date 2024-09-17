@@ -12,27 +12,145 @@
             <a href="index.html">Home</a>
             <a href="login.html">Logout</a>
             <div id="dark-mode-toggle" class="theme-toggle">
-                <i class="icon-moon"></i> <!-- Initially show the moon icon -->
+                <i class="fas fa-moon"></i>
             </div>
-            
         </nav>
     </header>
 
     <main>
-        <section class="upload">
-            <h2>Upload a New Game</h2>
-            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
-                <input type="file" id="game-file" name="gameFile" required>
-                <button type="submit">Upload</button>
-            </form>
-            <div id="upload-status"></div>
-            <div class="progress-container">
-                <div id="progress-bar" class="progress-bar">0%</div>
-            </div>
+        <section class="file-list">
+            <h2>ISO Files</h2>
+            <div id="iso-file-container" class="file-container"></div>
+        </section>
+
+        <section class="file-list">
+            <h2>Image Files</h2>
+            <div id="image-file-container" class="file-container"></div>
         </section>
     </main>
 
     <script src="dark-mode-toggle.js"></script>
-    <script src="upload.js"></script>
+    <script>
+        // Fetch files for admin to view and delete
+        fetch('/api/admin/files')
+            .then(response => response.json())
+            .then(data => {
+                const { isoFiles, imageFiles } = data;
+
+                const isoContainer = document.getElementById('iso-file-container');
+                isoFiles.forEach(file => {
+                    const fileElement = document.createElement('div');
+                    fileElement.classList.add('file-item');
+                    
+                    fileElement.innerHTML = `
+                        <div class="file-info">
+                            <h3>${file.name}</h3>
+                            <a href="${file.path}" download>Download</a>
+                            <button class="delete-btn" data-filename="${file.name}">Delete</button>
+                        </div>
+                    `;
+
+                    isoContainer.appendChild(fileElement);
+                });
+
+                const imageContainer = document.getElementById('image-file-container');
+                imageFiles.forEach(file => {
+                    const fileElement = document.createElement('div');
+                    fileElement.classList.add('file-item');
+                    
+                    fileElement.innerHTML = `
+                        <img src="${file.path}" alt="${file.name}" class="file-image">
+                        <div class="file-info">
+                            <h3>${file.name}</h3>
+                            <a href="${file.path}" download>Download</a>
+                            <button class="delete-btn" data-filename="${file.name}">Delete</button>
+                        </div>
+                    `;
+
+                    imageContainer.appendChild(fileElement);
+                });
+
+                // Add event listeners to delete buttons
+                document.querySelectorAll('.delete-btn').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const filename = this.getAttribute('data-filename');
+                        if (confirm(`Are you sure you want to delete ${filename}?`)) {
+                            fetch(`/api/admin/files/${filename}`, {
+                                method: 'DELETE'
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                alert(data.message);
+                                location.reload();  // Reload the page after deletion
+                            });
+                        }
+                    });
+                });
+            });
+    </script>
 </body>
 </html>
+fetch('/api/admin/files')
+    .then(response => response.json())
+    .then(data => {
+        const { isoFiles = [], imageFiles = [] } = data; // Default to empty arrays if not present
+
+        // Populate ISO files
+        const isoContainer = document.getElementById('iso-file-container');
+        if (isoFiles.length > 0) {
+            isoFiles.forEach(file => {
+                const fileElement = document.createElement('div');
+                fileElement.classList.add('file-item');
+                
+                fileElement.innerHTML = `
+                    <div class="file-info">
+                        <h3>${file.name}</h3>
+                        <a href="${file.path}" download>Download</a>
+                        <button class="delete-btn" data-filename="${file.name}">Delete</button>
+                    </div>
+                `;
+                isoContainer.appendChild(fileElement);
+            });
+        } else {
+            isoContainer.innerHTML = `<p>No ISO files found.</p>`;
+        }
+
+        // Populate image files
+        const imageContainer = document.getElementById('image-file-container');
+        if (imageFiles.length > 0) {
+            imageFiles.forEach(file => {
+                const fileElement = document.createElement('div');
+                fileElement.classList.add('file-item');
+                
+                fileElement.innerHTML = `
+                    <img src="${file.path}" alt="${file.name}" class="file-image">
+                    <div class="file-info">
+                        <h3>${file.name}</h3>
+                        <a href="${file.path}" download>Download</a>
+                        <button class="delete-btn" data-filename="${file.name}">Delete</button>
+                    </div>
+                `;
+                imageContainer.appendChild(fileElement);
+            });
+        } else {
+            imageContainer.innerHTML = `<p>No image files found.</p>`;
+        }
+
+        // Add event listeners to delete buttons
+        document.querySelectorAll('.delete-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const filename = this.getAttribute('data-filename');
+                if (confirm(`Are you sure you want to delete ${filename}?`)) {
+                    fetch(`/api/admin/files/${filename}`, {
+                        method: 'DELETE'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                        location.reload();  // Reload the page after deletion
+                    });
+                }
+            });
+        });
+    })
+    .catch(error => console.error('Error fetching files:', error));  // Add error handling for API call
